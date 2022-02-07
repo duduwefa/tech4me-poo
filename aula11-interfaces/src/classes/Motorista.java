@@ -1,15 +1,23 @@
 package classes;
 
+
 public class Motorista extends Pessoa {
     //atributos
     private int matricula;
     private String habilitacao;
     private Carro veiculoAtual;
 
+    //construtores
+    public Motorista(int matricula, String habilitacao) {
+        this.matricula = matricula;
+        this.habilitacao = habilitacao;
+    }
+
     //getters e setters
     public int getMatricula() {
         return matricula;
     }
+    
     public void setMatricula(int matricula) {
         this.matricula = matricula;
     }
@@ -25,6 +33,8 @@ public class Motorista extends Pessoa {
     public void setVeiculoAtual(Carro veiculoAtual) {
         this.veiculoAtual = veiculoAtual;
     }
+   
+    
     
 
     

@@ -4,18 +4,30 @@ import java.util.InputMismatchException;
 
 import exceptions.PlacaInvalidaException;
 
-public class Carro {
+public class Carro  {
     private String letrasPlaca;
     private int numerosPlaca;
     // private String placa;
     private int numChassi;
     private int velocidadeAtual;
+    private Motorista motorista;
 
     public Carro() {}
 
     public Carro(String placa, int numChassi) throws PlacaInvalidaException {
         setPlaca(placa);
         this.numChassi = numChassi;
+    }
+
+    public Carro(String placa, int numChassi, Motorista motorista) throws PlacaInvalidaException {
+        this(motorista);
+        setPlaca(placa);
+        this.numChassi = numChassi;
+    }
+
+    public Carro(Motorista motorista) {
+        this.motorista = motorista;
+        motorista.setVeiculoAtual(this);
     }
 
     boolean frear() {
@@ -64,4 +76,14 @@ public class Carro {
     public void setNumChassi(int numChassi) {
         this.numChassi = numChassi;
     }
+
+    public int getVelocidadeAtual() {
+        return velocidadeAtual;
+    }
+
+    public void setVelocidadeAtual(int velocidadeAtual) {
+        this.velocidadeAtual = velocidadeAtual;
+    }
+
+   
 }
