@@ -3,8 +3,9 @@ package classes;
 import java.util.InputMismatchException;
 
 import exceptions.PlacaInvalidaException;
+import interfaces.Acelerador;
 
-public class Carro  {
+public class Carro implements Acelerador {
     private String letrasPlaca;
     private int numerosPlaca;
     // private String placa;
@@ -84,6 +85,22 @@ public class Carro  {
     public void setVelocidadeAtual(int velocidadeAtual) {
         this.velocidadeAtual = velocidadeAtual;
     }
+
+    @Override
+    public int acelerar() {
+        velocidadeAtual++;
+        return velocidadeAtual;
+    }
+
+    @Override
+    public int acelerar(int limite) {
+        for(int i = 0; i < limite; i++) {
+            velocidadeAtual++;
+        }
+
+        return velocidadeAtual;
+    }
+
 
    
 }

@@ -1,7 +1,8 @@
 package classes;
 
+import interfaces.Acelerador;
 
-public class Motorista extends Pessoa {
+public class Motorista extends Pessoa implements Acelerador {
     //atributos
     private int matricula;
     private String habilitacao;
@@ -32,6 +33,16 @@ public class Motorista extends Pessoa {
     }
     public void setVeiculoAtual(Carro veiculoAtual) {
         this.veiculoAtual = veiculoAtual;
+    }
+
+    @Override
+    public int acelerar() {
+        return veiculoAtual.acelerar();
+    }
+
+    @Override
+    public int acelerar(int limite) {
+        return veiculoAtual.acelerar(limite);
     }
    
     

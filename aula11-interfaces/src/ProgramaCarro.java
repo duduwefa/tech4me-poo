@@ -2,44 +2,29 @@ import java.util.InputMismatchException;
 
 import classes.*;
 import exceptions.PlacaInvalidaException;
+import interfaces.Acelerador;
 
 public class ProgramaCarro {
     public static void main(String[] args) {
         
-        //criar instância do objeto carro
-        Carro carro; 
+        Acelerador[] aceleradores = new Acelerador[3]; 
+        Motorista m1 = new Motorista(123, "ABDKSAJ12");
+
 
         try {
-            carro = new Carro("ABC1234", 123231);
+            aceleradores[0] = new Carro("ABC1234", 123112312, m1);
+            aceleradores[1] = new Carro("XYZ5678", 2983982, new Motorista(1235, "khsd"));
+            aceleradores[2] = m1;
         } catch (PlacaInvalidaException e) {
-            System.out.println(e.getMessage());
+            e.getMessage();
         }
 
-        /* //dar valores aos seus atributos
-        try {
-            //trecho de código que pode vir a lançar uma exceção
-            carro.setPlaca("null");
-        } catch(InputMismatchException ex) {
-            //ação a ser tomada quando eu tenho um problema de incompatibilidade de entrada
-            System.out.println(ex.getMessage());
-            System.out.println("Programa encerrado!");
-            return;
-        } catch(NullPointerException ex) {
-            //ação a ser tomada quando eu tenho um problema de apontamento nulo
-            System.out.println(ex.getMessage());
-            System.out.println("O programa continuará com a placa ABC1234");
-            carro.setPlaca("ABC1234");
-        }  */
+        for (Acelerador a : aceleradores) {
+            System.out.printf("Chamada do metodo em objeto do tipo %s", a.getClass().getSimpleName());
+            System.out.printf(" - Velocidade atual: %d\n", a.acelerar());
+        }
 
         
-        
-        // carro.setNumChassi(8927139);
-
-        //imprimir o resultado
-        // System.out.println("Placa do carro cadastrado é " + carro.getPlaca());
-
-        int arr [] = {1, 2, 3, 4, 5}; 
-        System.out.println (arr [7]);
 
     }
 }
