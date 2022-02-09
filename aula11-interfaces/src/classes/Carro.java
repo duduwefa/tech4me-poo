@@ -88,6 +88,10 @@ public class Carro implements Acelerador {
 
     @Override
     public int acelerar() {
+        //antes
+        //return velocidadeAtual++;
+
+        //depois
         velocidadeAtual++;
         return velocidadeAtual;
     }
