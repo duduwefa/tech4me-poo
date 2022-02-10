@@ -6,6 +6,12 @@ public class Pessoa {
     private String nome;
     private String cpf;
 
+    //construtor 
+    public Pessoa(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
     //getters e setters
     public String getNome() {
         return nome;
@@ -20,7 +26,21 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
-    
+    @Override
+    public boolean equals(Object obj) {
+        //criterio de igualdade
+        boolean igual = false;
+
+        if(obj != null && obj instanceof Pessoa) {
+            if(this.cpf == ((Pessoa)obj).cpf) {
+                igual = true;
+            } else {
+                igual = false;
+            }
+        }
+
+        return igual;
+    }
     
 
 }

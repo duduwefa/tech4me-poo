@@ -1,8 +1,9 @@
 package classes;
 
 import interfaces.Acelerador;
+import interfaces.Autenticavel;
 
-public class Motorista extends Pessoa implements Acelerador {
+public class Motorista extends Pessoa implements Acelerador, Autenticavel {
     //atributos
     private int matricula;
     private String habilitacao;
@@ -43,6 +44,11 @@ public class Motorista extends Pessoa implements Acelerador {
     @Override
     public int acelerar(int limite) {
         return veiculoAtual.acelerar(limite);
+    }
+
+    @Override
+    public String obterCredenciais() {
+        return String.format("%s-%d", getCpf(),getMatricula()); //123-321
     }
    
     

@@ -5,6 +5,11 @@ public class Motorista extends Pessoa {
     private int matricula;
     private String habilitacao;
 
+    //construtor
+    public Motorista(String nome, String cpf) {
+        super(nome, cpf);
+    }
+
     //getters e setters
     public int getMatricula() {
         return matricula;

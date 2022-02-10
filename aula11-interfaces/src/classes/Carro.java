@@ -4,8 +4,9 @@ import java.util.InputMismatchException;
 
 import exceptions.PlacaInvalidaException;
 import interfaces.Acelerador;
+import interfaces.Autenticavel;
 
-public class Carro implements Acelerador {
+public class Carro implements Acelerador, Autenticavel {
     private String letrasPlaca;
     private int numerosPlaca;
     // private String placa;
@@ -103,6 +104,11 @@ public class Carro implements Acelerador {
         }
 
         return velocidadeAtual;
+    }
+
+    @Override
+    public String obterCredenciais() {
+        return String.format("%s", getPlaca()); //ABC1234
     }
 
 
